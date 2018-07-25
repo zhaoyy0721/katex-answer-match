@@ -10,7 +10,7 @@ describe('', function(){
             ['a','b'],
             {
                 'blanks':['a','b'],
-            },
+            }
         )).to.be.true
     });
     it(`返回seq---兼容旧数据--[1,1]`,function() {
@@ -19,8 +19,8 @@ describe('', function(){
             {
                 'blanks':['a','b'],
                 isSeq: true
-            },
-            
+            }
+
         ).toString().toString()).to.equal('1,1')
     });
     it(`返回seq---兼容旧数据--[0,1,0]`,function() {
@@ -29,11 +29,10 @@ describe('', function(){
             {
                 'blanks':['a1','b','a'],
                 isSeq: true
-            },
-            
+            }
         ).toString().toString()).to.equal('0,1,0')
     });
-    
+
     it('兼容旧数据--全角空格／制表符/空格',function() {
         expect(judge(
             blank,
