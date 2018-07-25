@@ -4,7 +4,6 @@ const expect = chai.expect;
 const judge = require('./').katex_answer_match;
 const blank = [' abc','　abc','\tabc','a\tb\tc',' a\tb   c    ','abc\t'];
 describe('', function(){
-    
     it(`返回boolean---兼容旧数据`,function() {
         expect(judge(
             ['a','b'],
