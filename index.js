@@ -8,11 +8,11 @@
         !userAnswers && ( userAnswers = [] );
 
         if (extendedBlanks.length === 0 && blanks.length === 0) {
-            throw Error('extendedBlanks blanks必须传入其中一个');
+            console.warn('extendedBlanks blanks必须传入其中一个');
         }
 
         if (userAnswers.length === 0) {
-            throw Error('userAnswers 必传');
+            console.warn('userAnswers 必传');
         }
 
 
@@ -51,11 +51,11 @@
             // 是否支持乱序
             let groupSameIndex = -1;
             let itUsrBlankDisOrder = groups && groups.some((group, groupIndex) => {
-                if (group.includes(userIndex)) {
-                    groupSameIndex = groupIndex;
-                }
-                return group.includes(userIndex);
-            });
+                    if (group.includes(userIndex)) {
+                        groupSameIndex = groupIndex;
+                    }
+                    return group.includes(userIndex);
+                });
             if (extendedBlanks[userIndex].includes(userAnswer)) { // 直接匹配答案
                 rightSeq[userIndex] = 1
             } else if (itUsrBlankDisOrder) { // 支持乱序 匹配所有的答案
@@ -72,7 +72,7 @@
                             return 1;
                         }
                         return false
-                   }
+                    }
                 });
                 if (ifOk) {  // 调换extendedBlanks顺序
                     let __temp = [];
